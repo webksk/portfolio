@@ -1,0 +1,166 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Portfolio</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- " Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+</head>
+  <body style="background: #C0C0C0 !important;" onload="loadCategories();">
+      <header>
+          <div class="collapse bg-dark" id="navbarHeader">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-sm-8 col-md-7 py-4">
+                          <h4 class="text-white">About</h4>
+                          <h4 class="text-white">About</h4>
+                          <p class="text-muted">Site created by Igor Miroshnik</p>
+                          <p class="text-muted">ISPU student</p>
+                      </div>
+                      <div class="col-sm-4 offset-md-1 py-4">
+                          <h4 class="text-white">Contact</h4>
+                          <ul class="list-unstyled">
+                              <li><a href="mailto:miroshnik98@mail.ru?subject=Кого?" class="text-white">Email me</a></li>
+                          </ul>
+                          <h6 style="color:white">Оцените наш сайт и расскажите о нём</h6>
+                          <span class="likebtn-wrapper" data-theme="bootstrap" data-lang="ru" data-ef_voting="push" data-identifier="item_1"></span>
+                          <script>(function (d, e, s) { if (d.getElementById("likebtn_wjs")) return; a = d.createElement(e); m = d.getElementsByTagName(e)[0]; a.async = 1; a.id = "likebtn_wjs"; a.src = s; m.parentNode.insertBefore(a, m) })(document, "script", "//w.likebtn.com/js/w/widget.js");</script>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="navbar navbar-dark bg-dark shadow-sm">
+              <div class="container d-flex justify-content-between">
+                  <a href="#" class="navbar-brand d-flex align-items-center">
+                      <img src="https://svgsilh.com/svg/297440.svg" width="30" height="30" />
+                      <strong>Portfolio site</strong>
+                  </a>
+                  <button class="btn btn-primary col-lg-2 offset-7" data-toggle="modal" data-target="#modal1" onclick="showModal()">Log in</button>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+              </div>
+          </div>
+
+      </header>
+      <main role="main">
+          <h1 class="jumbotron-heading" style="margin-left:50%">Welcome!</h1>
+          <hr />
+          <h1 class="jumbotron-heading">Categories</h1>
+          <div id="actionMsg" class="msgClass"></div>
+
+          <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="#authtitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3 class="modal-title" id="authtitle">Log in</h3>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <div>
+                              <form>
+                                  <div class="msgClass">
+                                      <div id="msgAuth"></div>
+                                      <div id="msg"></div>
+                                      <ul id="formError"></ul>
+                                  </div>
+                                  <div>
+                                      <label for="Email">Email: </label><br />
+                                      <input type="text" id="Email" name="Email">
+                                  </div>
+                                  <div>
+                                      <label for="Password">Password: </label><br />
+                                      <input type="password" id="Password" name="Password">
+                                  </div>
+                              </form>
+                              <p>
+                                  Don't have an account?<a href="register.html" style="margin-left:5px;">Join</a>
+                              </p>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button id="loginBtn" class="btn btn-sm btn-outline-primary" data-dismiss="modal" aria-label="Close">Log in</button>
+                          <button id="logoffBtn" class="btn btn-sm btn-outline-secondary" data-dismiss="modal" aria-label="Close">Log out</button>
+                      </div>
+                  </div><!-- /.модальное окно-Содержание -->
+              </div><!-- /.модальное окно-диалог -->
+          </div><!-- /.модальное окно -->
+          <div class="shift-left">
+              <form>
+                  <div class="row">
+                      <div class="col-4">
+                          <h3>Create new category</h3>
+                          <label for="createTitle">Title:</label><br />
+                          <input required id="createTitle" type="text" /><br />
+                          <label for="createURL">URL:</label><br />
+                          <input required id="createURL" type="text" />
+                      </div>
+                      <div class="col-4">
+                          <h3>Post</h3>
+                          <label for="createCustID">ID of customer:</label><br />
+                          <input required id="createCustID" type="text" /><br />
+                          <label for="createPostTitle">Post Title:</label><br />
+                          <input required id="createPostTitle" type="text" /><br />
+                          <label for="createPostContent">Post Content:</label><br />
+                          <input required id="createPostContent" type="text" />
+                          <button onclick="createCategory();return false;" class="btn btn-sm btn-outline-secondary">Add</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="shift-left" id="editDiv" style="display:none;">
+              <h3>Edit category</h3>
+              <form>
+                  <label for="editTitle">Title:</label><br />
+                  <input id="editTitle" type="text" /><br />
+                  <label for="editURL">URL:</label><br />
+                  <input id="editURL" type="text" />
+                  <input id="editID" type="hidden" />
+                  <button onclick="updateCategory();" class="btn btn-sm btn-outline-secondary">Save</button>
+                  <button onclick="closeInput();" class="btn btn-sm btn-outline-secondary">Cancel</button>
+              </form>
+          </div>
+          <div class="shift-left">
+              <div id="categoriesDiv"></div>
+          </div>
+          <script src="js/scripts2.js"></script>
+      </main>
+        <footer class="text-muted">
+          <div class="container">
+            <p class="float-right">
+              <a href="#">Back to top</a>
+            </p>
+            <p>2019</p>
+          </div>
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  </body>
+</html>
