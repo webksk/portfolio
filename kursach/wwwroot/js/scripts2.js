@@ -19,7 +19,7 @@ function getCurrentUser() {
     request.send();
 }
 
-//Загразка категорий
+//Загрузка категорий
 function loadCategories() {
     var i, j, x = "";
     var request = new XMLHttpRequest();
